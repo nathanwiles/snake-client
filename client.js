@@ -1,7 +1,7 @@
 const net = require("net");
 
+// establishes a connection with the game server
 const connect = function() {
-  // establishes a connection with the game server
   const conn = net.createConnection({
     host: "localhost", // change to server ip address if external.
     port: 50541, // set appropriate port
@@ -17,4 +17,5 @@ const connect = function() {
   return conn;
 };
 
+// export connect function
 module.exports = { connect };
