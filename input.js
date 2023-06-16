@@ -26,16 +26,17 @@ const setupInput = (conn) => {
 // function to handle user input
 const handleUserInput = (key) => {
   // helper function to send data to server
-  const sendData = (data,) => {
+  const sendData = (data) => {
     connection.write(data);
   };
 
   // switch statement to handle movement commands
   switch (key) {
+    // ctrl-c: logs termination and closes connection
     case "\u0003":
-      // ctrl-c: logs termination and closes connection
       console.log("User terminated connection \n");
       exit();
+    // movement commands
     case "w":
       sendData("Move: up");
       break;
@@ -48,7 +49,22 @@ const handleUserInput = (key) => {
     case "d":
       sendData("Move: right");
       break;
-
+    // message commands
+    case "1":
+      sendData("Say: I see fresh meat!");
+      break;
+    case "2":
+      sendData("Say: I'm gonna eat you!");
+      break;
+    case "3":
+      sendData("Say: I'm coming for you!");
+      break;
+    case "4":
+      sendData("Say: What a tasty meal!");
+      break;
+    case "5":
+      sendData("Say: oh... woops!");
+      break;
     default:
       break;
   }
