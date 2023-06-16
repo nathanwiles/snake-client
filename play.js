@@ -14,8 +14,10 @@ console.log("Connecting ...");
 
 // define function to run game
 const run = () => {
-  conn = connect();
-  setupInput();
+  // call connect function and store connection object in conn variable
+  conn = connect(); 
+  // call setupInput function and pass connection object as argument
+  setupInput(conn);
 };
 
 

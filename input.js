@@ -6,8 +6,14 @@
 // import and setup required modules
 const { exit, stdin } = require("process");
 
-// fuction to setup user input
-const setupInput = () => {
+// declare connection variable
+let connection;
+
+// fuction to set up user input
+const setupInput = (conn) => {
+  // set connection variable to connection object
+  connection = conn;
+  // setup stdin to handle user input
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
@@ -20,8 +26,8 @@ const setupInput = () => {
 // function to handle user input
 const handleUserInput = (key) => {
   // helper function to send data to server
-  const sendData = (data) => {
-    conn.write(data);
+  const sendData = (data,) => {
+    connection.write(data);
   };
 
   // switch statement to handle movement commands
