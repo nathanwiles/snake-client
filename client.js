@@ -23,14 +23,27 @@ const connect = function () {
     stdin.setRawMode(true);
 
     stdin.on("data", (data) => {
-      switch (data) {
+      switch (data) { // switch statement to handle user input
         case "\u0003":
           process.exit();
         case "w":
+        
           conn.write("Move: up");
           break;
+        case "a":
+      
+          conn.write("Move: left");
+          break;
+        case "s":
+        
+          conn.write("Move: down");
+          break;
+        case "d":
+        
+          conn.write("Move: right");
+          break;
         default:
-          conn.write(data);
+          console.log("Invalid input", data)
           break;
       }
     });
