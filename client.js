@@ -8,6 +8,9 @@ const connect = function () {
     port: 50541, // set appropriate port
   });
 
+  const sendData = (data) => {
+    conn.write(data);
+  };
   conn.setEncoding("utf8"); // interpret data as text
 
   // log messages from server
@@ -21,30 +24,29 @@ const connect = function () {
     console.log("Successfully connected to game server");
     stdin.setEncoding("utf8");
     stdin.setRawMode(true);
+    
 
     stdin.on("data", (data) => {
-      switch (data) { // switch statement to handle user input
+      switch (
+        data // switch statement to handle user input
+      ) {
         case "\u0003":
           console.log("left server: user terminated connection");
           process.exit();
         case "w":
-        
-          conn.write("Move: up");
+          sendData("Move: up");
           break;
         case "a":
-      
-          conn.write("Move: left");
+          sendData("Move: left");
           break;
         case "s":
-        
-          conn.write("Move: down");
+          sendData("Move: down");
           break;
         case "d":
-        
-          conn.write("Move: right");
+          sendData("Move: right");
           break;
         default:
-          console.log("Invalid input:", data)
+          console.log("Invalid input:", data);
           break;
       }
     });
