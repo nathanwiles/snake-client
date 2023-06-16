@@ -3,9 +3,11 @@
 
 // client side code for User Input.
 
+// import and setup required modules
+const { exit, stdin } = require("process");
+
 // fuction to setup user input
 const setupInput = () => {
-  const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
@@ -15,18 +17,18 @@ const setupInput = () => {
   return stdin;
 };
 
-// helper function to send data to server
-const sendData = (data) => {
-  conn.write(data);
-};
-
 // function to handle user input
 const handleUserInput = (key) => {
-  switch (
-    key // switch statement to handle movement commands
-  ) {
-    case "\u0003": // ctrl-c closes connection
-      console.log("User terminated connection");
+  // helper function to send data to server
+  const sendData = (data) => {
+    conn.write(data);
+  };
+
+  // switch statement to handle movement commands
+  switch (key) {
+    case "\u0003":
+      // ctrl-c: logs termination and closes connection
+      console.log("User terminated connection \n");
       exit();
     case "w":
       sendData("Move: up");
@@ -46,4 +48,5 @@ const handleUserInput = (key) => {
   }
 };
 
+// export setupInput function
 module.exports = { setupInput };

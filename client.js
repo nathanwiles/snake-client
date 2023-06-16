@@ -9,6 +9,7 @@ const { exit } = require("process");
 
 // function to connect to server
 const connect = function () {
+  
   // create connection object
   const conn = net.createConnection({
     host: "localhost", // change to server ip address if external.
@@ -35,6 +36,7 @@ const connect = function () {
     exit();
   });
 
+  // return connection object
   return conn;
 };
 
