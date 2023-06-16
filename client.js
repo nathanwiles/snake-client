@@ -1,7 +1,8 @@
 const net = require("net");
+const { stdin } = require("process"); // get stdin from process
 
 // establishes a connection with the game server
-const connect = function() {
+const connect = function () {
   const conn = net.createConnection({
     host: "localhost", // change to server ip address if external.
     port: 50541, // set appropriate port
@@ -18,6 +19,26 @@ const connect = function() {
   conn.on("connect", () => {
     conn.write("Name: NAW");
     console.log("Successfully connected to game server");
+    stdin.setEncoding("utf8");
+    stdin.setRawMode(true);
+
+    stdin.on("data", (data) => {
+      switch (data) {
+        case "\u0003":
+          process.exit();
+        case "w":
+          conn.write("Move: up");
+          break;
+        default:
+          conn.write(data);
+          break;
+      }
+    });
+  });
+
+  conn.on("end", () => {
+    console.log("Disconnected from server");
+    process.exit();
   });
 
   return conn;
