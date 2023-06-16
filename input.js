@@ -1,10 +1,11 @@
 // Part of Snake project
 // Created by Nathan Wiles
 
-// client side code for User Input.
+// Client side: Handles user input.
 
 // import and setup required modules
 const { exit, stdin } = require("process");
+const { KEYRETURNS, LOGMESSAGE, ENCODING } = require("./constants");
 
 // declare connection variable
 let connection;
@@ -15,7 +16,7 @@ const setupInput = (conn) => {
   connection = conn;
   // setup stdin to handle user input
   stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
+  stdin.setEncoding(ENCODING);
   stdin.resume();
   stdin.on("data", (data) => {
     handleUserInput(data);
@@ -25,48 +26,15 @@ const setupInput = (conn) => {
 
 // function to handle user input
 const handleUserInput = (key) => {
-  // helper function to send data to server
-  const sendData = (data) => {
-    connection.write(data);
-  };
+  // exit game if user presses ctrl + c
+  if (key === "\u0003") {
+    console.log(LOGMESSAGE.userTerminated);
+    exit();
+  }
 
-  // switch statement to handle movement commands
-  switch (key) {
-    // ctrl-c: logs termination and closes connection
-    case "\u0003":
-      console.log("User terminated connection \n");
-      exit();
-    // movement commands
-    case "w":
-      sendData("Move: up");
-      break;
-    case "a":
-      sendData("Move: left");
-      break;
-    case "s":
-      sendData("Move: down");
-      break;
-    case "d":
-      sendData("Move: right");
-      break;
-    // message commands
-    case "1":
-      sendData("Say: I see fresh meat!");
-      break;
-    case "2":
-      sendData("Say: I'm gonna eat you!");
-      break;
-    case "3":
-      sendData("Say: I'm coming for you!");
-      break;
-    case "4":
-      sendData("Say: What a tasty meal!");
-      break;
-    case "5":
-      sendData("Say: oh... woops!");
-      break;
-    default:
-      break;
+  // send data to server if key is in KEYRETURNS object
+  if (KEYRETURNS[key]) {
+    connection.write(KEYRETURNS[key]);
   }
 };
 
