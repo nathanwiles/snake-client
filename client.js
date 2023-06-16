@@ -25,6 +25,7 @@ const connect = function () {
     stdin.on("data", (data) => {
       switch (data) { // switch statement to handle user input
         case "\u0003":
+          console.log("left server: user terminated connection");
           process.exit();
         case "w":
         
@@ -43,7 +44,7 @@ const connect = function () {
           conn.write("Move: right");
           break;
         default:
-          console.log("Invalid input", data)
+          console.log("Invalid input:", data)
           break;
       }
     });
