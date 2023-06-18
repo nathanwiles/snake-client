@@ -11,7 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/nathanwiles/snake-client.git"
   },
-  "author": "Nathan Wiles",
+  "author": {
+    "name" : "Nathan Wiles",
+    "github" : "nathanwiles"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nathanwiles/snake-client/issues"
