@@ -4,7 +4,7 @@
   "description": "A Client designed to connect to the LHL 'snek multiplayer' server and play the game of snake.",
   "main": "play.js",
   "scripts": {
-    "start": "node play.js",
+    "play": "node play.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
