@@ -10,7 +10,7 @@ const { setupInput } = require("./src/input"); // get setupInput function from i
 // function to run game
 const run = () => {
   // call connect function and store connection object in conn variable
-  conn = connect();
+  const conn = connect();
   // call setupInput function and pass connection object as argument
   setupInput(conn);
 };
