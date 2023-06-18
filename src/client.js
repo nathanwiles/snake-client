@@ -9,7 +9,7 @@ const { exit } = require("process");
 const { IP, PORT, LOGMESSAGE, ENCODING } = require("./constants");
 
 // function to connect to server
-const connect = function () {
+const connect = function() {
   // log message to show connection is being established
   console.log(LOGMESSAGE.connecting);
   // create connection object
