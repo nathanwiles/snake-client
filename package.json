@@ -1,0 +1,20 @@
+{
+  "name": "snake-client",
+  "version": "1.0.0",
+  "description": "A Client designed to connect to the LHL 'snek multiplayer' server and play the game of snake.",
+  "main": "play.js",
+  "scripts": {
+    "start": "node play.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanwiles/snake-client.git"
+  },
+  "author": "Nathan Wiles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanwiles/snake-client/issues"
+  },
+  "homepage": "https://github.com/nathanwiles/snake-client#readme"
+}
