@@ -4,7 +4,7 @@
 
 **_BEWARE:_ This library was published for learning purposes. It is _not_ intended for use in production-grade software.**
 
-This is the client side of the game "snake". It is setup to be multiplayer, with multiple players on the same board. It uses websockets and the .NET core framework.
+This is the client side of the popular game "snake". It is setup to be multiplayer, with multiple players on the same board. It uses websockets and the .NET core framework.
 
 ## Client Installation
 
@@ -19,26 +19,10 @@ Then install the dependencies:
 
 `npm install`
 
-## Join Exisiting Game Server
-
-If there already is a game server running, and you wish to connect to it.
-
-Edit the src/constants.js file within the newly cloned repo to point to the server's IP address and port.
-
-**_Example is the defualt "localhost" server_**
-
-```javascript
-// IP and PORT for the server connection
-const IP = "localhost"; //change to server IP
-const PORT = 50541; //change to server port
-const ENCODING = "utf8"; // leave as is
-```
-
-## New Game Server
-
-The LHL game server included with the project can be found [here](https://github.com/lighthouse-labs/snek-multiplayer/)
 
 ### Install the Game Server
+
+The LHL game server included with the project can be found [here](https://github.com/lighthouse-labs/snek-multiplayer/)
 
 Navigate to desired destination directory, clone the server repo, and install any dependencies.
 
@@ -54,7 +38,7 @@ Then, from within the directory, run the following command to start the server:
 
 ## Starting a New Client
 
-**_If you are running both the host and client on the same machine, you will need to run the client from a different terminal window._**
+**_both the host and client must be running on the same machine, server will need to be running in a seperate terminal window._**
 
 Navigate to the client directory and run the following command:
 
