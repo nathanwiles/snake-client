@@ -13,6 +13,7 @@ The client can be found [here.](https://github.com/nathanwiles/snake-client)
 First clone the client directory to your desired destination:
 
 `cd ~/path/to/desired/directory`
+
 `git clone git@github.com:nathanwiles/snake-client.git`
 
 Then install the dependencies:
