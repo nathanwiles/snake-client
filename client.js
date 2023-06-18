@@ -21,17 +21,17 @@ const connect = function () {
   // interpret data as text
   conn.setEncoding(ENCODING);
 
-  // log incoming messages from server
-  conn.on("data", (data) => {
-    console.log(LOGMESSAGE.fromServer, data);
-  });
-
+  
   // log message when connection is established
   conn.on("connect", () => {
     conn.write("Name: NAW");
     console.log(LOGMESSAGE.connected);
   });
-
+  
+  // log incoming messages from server
+  conn.on('data', (data) => {
+    console.log(LOGMESSAGE.fromServer, data);
+  });
   // log message when connection is terminated and exit
   conn.on("end", () => {
     console.log(LOGMESSAGE.disconnected);
