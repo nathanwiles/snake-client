@@ -10,12 +10,14 @@ This is the client side of the game "snake". It is setup to be multiplayer, with
 
 The client can be found [here.](https://github.com/nathanwiles/snake-client)
 
-First clone the client directory to your desired destination
+First clone the client directory to your desired destination:
 
-```bash
-cd ~/path/to/desired/directory
-git clone git@github.com:nathanwiles/snake-client.git
-```
+`cd ~/path/to/desired/directory`
+`git clone git@github.com:nathanwiles/snake-client.git`
+
+Then install the dependencies:
+
+`npm install`
 
 ## Join Exisiting Game Server
 
@@ -48,11 +50,9 @@ Navigate to desired destination directory, clone the server repo, and install an
 
 Then, from within the directory, run the following command to start the server:
 
-
 `$ npm run play`
 
-
-## Starting a new client
+## Starting a New Client
 
 **_If you are running both the host and client on the same machine, you will need to run the client from a different terminal window._**
 
@@ -62,7 +62,7 @@ Navigate to the client directory and run the following command:
 
 `$ npm run play`
 
-## Playing the game
+## How to Play the Game
 
 Once you've joined the server you can navigate your snake using the **'wasd'** keys. The goal is to eat as many dots as possible without running into yourself or another snake. The last snake alive is the winner.
 
