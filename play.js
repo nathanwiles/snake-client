@@ -4,10 +4,10 @@
 // Client side: Initializes snake game
 
 // import required modules
-const { connect } = require("./client"); // get connect function from client.js
-const { setupInput } = require("./input"); // get setupInput function from input.js
+const { connect } = require("./src/client"); // get connect function from client.js
+const { setupInput } = require("./src/input"); // get setupInput function from input.js
 
-// define function to run game
+// function to run game
 const run = () => {
   // call connect function and store connection object in conn variable
   conn = connect();
