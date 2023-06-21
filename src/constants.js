@@ -1,7 +1,6 @@
-// Part of Snake project
+// Part of Snake Client project
 // Created by Nathan Wiles
 
-// Client side: Database of constant values.
 
 // IP and PORT for server connection
 const IP = "localhost";

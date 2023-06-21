@@ -1,7 +1,5 @@
-// Part of Snake project
+// Part of Snake Client project
 // Created by Nathan Wiles
-
-// Client side: Handles server connection.
 
 // import required modules
 const net = require("net");

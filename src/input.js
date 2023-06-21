@@ -1,7 +1,6 @@
-// Part of Snake project
+// Part of Snake Client project
 // Created by Nathan Wiles
 
-// Client side: Handles user input.
 
 // import and deconstruct required modules
 const { exit, stdin } = require("process");

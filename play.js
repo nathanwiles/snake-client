@@ -1,7 +1,6 @@
-// Part of Snake project
-// Created by Nathan Wiles
+// Part of Snake Client project
+// Created by Nathan Wiles// Client side: Initializes snake game
 
-// Client side: Initializes snake game
 
 // import required modules
 const { connect } = require("./src/client");
